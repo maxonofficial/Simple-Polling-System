@@ -15,8 +15,9 @@ function submitVote(){
     const selectedOptionObj = options.find((option)=> option.id === optionId);
     if(selectedOptionObj){
         selectedOptionObj.votes++;
-        console.log(selectedOptionObj);
+        // console.log(selectedOptionObj);  
         displayResult();
+        selectedOption.checked = false;
     }
 }
 
@@ -35,11 +36,15 @@ function displayResult(){
             <div class = "bar-container">
                 <div class = "bar" style="width: ${barWidth};"></div>
             </div>
-            <span class = "percentage">${percentage}%</span>
+            <span class = "percentage">${barWidth}</span>
         `;
         
         result.appendChild(optionResult);
     });
+    const total = document.createElement("h3")
+    total.className="total";
+    total.innerHTML = `<h3>Total Votes : ${getTotalVotes()}</h3>`
+    result.appendChild(total)   
 }
 
 function getTotalVotes(){

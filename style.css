@@ -115,6 +115,7 @@ button:hover{
 
 .option-text{
     flex: 1;
+    width: 450px;
 }
 
 .bar-container{
@@ -141,4 +142,8 @@ button:hover{
     margin-left: 10px;
     font-weight: bold;
     color: #ff1493;
+}
+
+.total{
+    color: black;
 }
